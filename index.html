@@ -70,14 +70,15 @@
   <!-- Open Camera Button -->
   <button id="openCameraBtn">📷 View in AR</button>
 
-  <script>
-    document.getElementById('openCameraBtn').addEventListener('click', () => {
-      // Replace with your actual hosted GLB/GLTF file URL
-      const modelUrl = "https://yashasvidesh03-cmd.github.io/3-d-model-/assets/models/textured_mesh_glb-1.glb";
-      const sceneViewerUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(modelUrl)}&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;`;
-      window.location.href = sceneViewerUrl;
-    });
-  </script>
+<script>
+  document.getElementById('openCameraBtn').addEventListener('click', () => {
+    // New GLB file URL (replace with your hosted file URL)
+    const modelUrl = "https://yourhosting.com/path/to/manchurian_plate.glb";
+    const sceneViewerUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(modelUrl)}&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;`;
+    window.location.href = sceneViewerUrl;
+  });
+</script>
+  
 
 </body>
 </html>
