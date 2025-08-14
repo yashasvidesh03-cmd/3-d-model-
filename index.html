@@ -3,50 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3D Iron Viewer</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Luma Labs + Image Gallery + AR Model</title>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <style>
     body {
       font-family: Arial, sans-serif;
       text-align: center;
-      background: #f8f8f8;
       margin: 0;
+      background: #f8f8f8;
     }
     h1, h2 {
       margin: 10px 0;
     }
+    .gallery {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px;
+      flex-wrap: wrap;
+    }
     .gallery img {
       width: 150px;
-      margin: 10px;
+      height: auto;
       border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.2s;
+      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
     }
-    .gallery img:hover {
-      transform: scale(1.05);
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 10px;
     }
     model-viewer {
+      display: none;
+      width: 100%;
+      height: 500px;
+      margin-top: 10px;
       border-radius: 10px;
-      background: #ddd;
     }
-    /* Close button style */
-    #closeFullscreen {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      z-index: 9999;
-      background: rgba(0,0,0,0.7);
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: black;
       color: white;
       border: none;
-      padding: 10px 15px;
-      font-size: 16px;
       border-radius: 5px;
       cursor: pointer;
-      display: none;
     }
-    #closeFullscreen:hover {
-      background: rgba(0,0,0,0.9);
+    button:hover {
+      background: #333;
     }
   </style>
 </head>
@@ -54,79 +61,45 @@
 
   <h1>Electric Irons Showcase</h1>
 
+  <!-- Image Gallery -->
   <div class="gallery">
-    <img src="t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Iron Model 1">
+    <img src="17010-01.jpg" alt="Iron Model 1">
     <img src="drsrcmtmgbpz9x3opy0t_sbqpcswqss5gzj6k.jpg" alt="Iron Model 2">
-    <img src="17010-01.jpg" alt="Iron Model 3">
+    <img src="t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Iron Model 3">
   </div>
 
-  <h2>3D Model</h2>
+  <h2>3D View</h2>
 
+  <!-- Luma Labs Embed -->
+  <iframe src="https://lumalabs.ai/embed/714e87de-8401-4b22-a9fa-be61b300172d?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=top-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=true"></iframe>
+
+  <!-- Open Camera Button -->
+  <button id="openCameraBtn">📷 Open Camera AR View</button>
+
+  <!-- Model Viewer -->
   <model-viewer
     id="ironModel"
     src="models/textured_mesh_glb-1.glb"
     alt="3D Iron Model"
     ar
     ar-modes="scene-viewer webxr quick-look"
-    environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
-    auto-rotate
     camera-controls
-    exposure="1"
-    shadow-intensity="1"
-    style="width: 100%; max-width: 800px; height: 500px; margin: auto;">
+    auto-rotate
+    style="background: #ddd;">
   </model-viewer>
 
-  <!-- Close Button -->
-  <button id="closeFullscreen">✖ Close</button>
-
   <script>
+    const btn = document.getElementById('openCameraBtn');
     const model = document.getElementById('ironModel');
-    const closeBtn = document.getElementById('closeFullscreen');
+    const iframe = document.querySelector('iframe');
 
-    function goFullscreen() {
-      if (model.requestFullscreen) {
-        model.requestFullscreen();
-      } else if (model.webkitRequestFullscreen) {
-        model.webkitRequestFullscreen();
-      } else if (model.msRequestFullscreen) {
-        model.msRequestFullscreen();
-      }
-    }
-
-    function exitFullscreen() {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      } else if (document.webkitExitFullscreen) {
-        document.webkitExitFullscreen();
-      } else if (document.msExitFullscreen) {
-        document.msExitFullscreen();
-      }
-    }
-
-    // Show/Hide close button
-    document.addEventListener('fullscreenchange', () => {
-      if (document.fullscreenElement) {
-        closeBtn.style.display = 'block';
-      } else {
-        closeBtn.style.display = 'none';
-      }
-    });
-
-    closeBtn.addEventListener('click', exitFullscreen);
-
-    // Double click (desktop) or double tap (mobile) to fullscreen
-    model.addEventListener('dblclick', goFullscreen);
-    let lastTap = 0;
-    model.addEventListener('touchend', function (e) {
-      const currentTime = new Date().getTime();
-      const tapLength = currentTime - lastTap;
-      if (tapLength < 300 && tapLength > 0) {
-        goFullscreen();
-      }
-      lastTap = currentTime;
+    btn.addEventListener('click', () => {
+      iframe.style.display = 'none';
+      model.style.display = 'block';
+      model.activateAR();
     });
   </script>
 
 </body>
-      </html>
-
+    </html>
+    
