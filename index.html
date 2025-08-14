@@ -12,22 +12,27 @@
   <h1>Electric Irons Showcase</h1>
 
   <div class="gallery">
-    <img src="17010-01.jpg" alt="Iron Model 1">
-    <img src="drsrcmtmgbpz9x3opy0t_sbqpcswqss5gzj6k.jpg" alt="Iron Model 2">
-    <img src="t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Iron Model 3">
+    <img src="images/iron1.jpg" alt="Iron Model 1">
+    <img src="images/iron2.jpg" alt="Iron Model 2">
+    <img src="images/iron3.jpg" alt="Iron Model 3">
   </div>
 
   <h2>3D Model</h2>
 
-  <model-viewer 
-    src="assets/models/textured_mesh_glb-1.glb"
+  <model-viewer
+    src="models/textured_mesh_glb-1.glb"
     alt="3D Iron Model"
     ar
     ar-modes="scene-viewer webxr quick-look"
     environment-image="neutral"
     auto-rotate
     camera-controls
-    style="width: 100%; height: 500px;">
+    shadow-intensity="1"
+    exposure="1.2"
+    interaction-prompt="when-focused"
+    style="width: 100%; height: 500px;"
+    loading="eager"
+    poster="images/loading-poster.jpg">
   </model-viewer>
 
 </body>
