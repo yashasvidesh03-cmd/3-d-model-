@@ -1,61 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR E-Commerce Store</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AR E-Commerce Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://yashasvidesh03-cmd.github.io/3-d-model-/favicon.png">
 </head>
 <body>
+  <!-- Header / Navbar -->
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <span class="logo">AR<span class="accent">Shop</span></span>
+      </div>
 
-    <header>
-        <h1>🛒 AR Product Store</h1>
-    </header>
+      <div class="search">
+        <input id="searchInput" type="text" placeholder="Search for irons, kitchen, gadgets…" />
+        <button id="searchBtn" aria-label="Search">Search</button>
+      </div>
 
-    <main class="product-grid">
+      <div class="actions">
+        <button class="action-btn" id="loginBtn">Sign in</button>
+        <button class="action-btn cart" id="cartBtn" aria-label="Cart">
+          🛒 <span id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-        <!-- Product 1 -->
-        <div class="product-card">
-            <img src="https://yashasvidesh03-cmd.github.io/3-d-model-/product1.jpg" alt="Product 1">
-            <h2>Product 1</h2>
-            <p>High-quality product with AR view option.</p>
-            <button onclick="openAR('textured_mesh_glb-1.glb')">📷 View in AR</button>
+  <!-- Promo -->
+  <section class="promo">
+    <div class="container promo-inner">
+      <div>
+        <h1>Experience Products in Your Space</h1>
+        <p>Tap <b>📷 View in AR</b> on mobile to open Google Scene Viewer and place the product in your room.</p>
+      </div>
+      <img src="https://yashasvidesh03-cmd.github.io/3-d-model-/hero.png" alt="AR hero" />
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <main class="container">
+    <div class="grid" id="productsGrid">
+
+      <!-- PRODUCT 1 (uses textured_mesh_glb-1.glb) -->
+      <article class="card" data-title="Product 1">
+        <div class="badge">Bestseller</div>
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/product1.jpg" alt="Product 1">
+        <div class="card-body">
+          <h2 class="card-title">Product 1</h2>
+          <div class="rating">⭐️⭐️⭐️⭐️☆ <span class="muted">(1,248)</span></div>
+          <ul class="feat">
+            <li>Premium build quality</li>
+            <li>Great for daily use</li>
+            <li>Lightweight & durable</li>
+          </ul>
+          <div class="price-row">
+            <span class="price">₹2,600</span>
+            <span class="mrp muted">₹3,299</span>
+            <span class="off">21% off</span>
+          </div>
+          <div class="cta-row">
+            <button class="btn primary" onclick="addToCart('Product 1', 2600)">Add to Cart</button>
+            <button class="btn outline" onclick="openAR('textured_mesh_glb-1.glb')">📷 View in AR</button>
+          </div>
         </div>
+      </article>
 
-        <!-- Product 2 -->
-        <div class="product-card">
-            <img src="https://yashasvidesh03-cmd.github.io/3-d-model-/product2.jpg" alt="Product 2">
-            <h2>Product 2</h2>
-            <p>Modern design with realistic details.</p>
-            <button onclick="openAR('model_1.glb')">📷 View in AR</button>
+      <!-- PRODUCT 2 (uses model_1.glb) -->
+      <article class="card" data-title="Product 2">
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/product2.jpg" alt="Product 2">
+        <div class="card-body">
+          <h2 class="card-title">Product 2</h2>
+          <div class="rating">⭐️⭐️⭐️⭐️⭐️ <span class="muted">(894)</span></div>
+          <ul class="feat">
+            <li>Modern design</li>
+            <li>Energy efficient</li>
+            <li>Smooth performance</li>
+          </ul>
+          <div class="price-row">
+            <span class="price">₹3,200</span>
+            <span class="mrp muted">₹3,899</span>
+            <span class="off">18% off</span>
+          </div>
+          <div class="cta-row">
+            <button class="btn primary" onclick="addToCart('Product 2', 3200)">Add to Cart</button>
+            <button class="btn outline" onclick="openAR('model_1.glb')">📷 View in AR</button>
+          </div>
         </div>
+      </article>
 
-        <!-- Product 3 -->
-        <div class="product-card">
-            <img src="https://yashasvidesh03-cmd.github.io/3-d-model-/product3.jpg" alt="Product 3">
-            <h2>Product 3</h2>
-            <p>Elegant style for everyday use.</p>
-            <button onclick="openAR('model_2.glb')">📷 View in AR</button>
+      <!-- PRODUCT 3 (uses model_2.glb) -->
+      <article class="card" data-title="Product 3">
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/product3.jpg" alt="Product 3">
+        <div class="card-body">
+          <h2 class="card-title">Product 3</h2>
+          <div class="rating">⭐️⭐️⭐️⭐️☆ <span class="muted">(632)</span></div>
+          <ul class="feat">
+            <li>Reliable build</li>
+            <li>Great price–performance</li>
+            <li>Low maintenance</li>
+          </ul>
+          <div class="price-row">
+            <span class="price">₹3,100</span>
+            <span class="mrp muted">₹3,799</span>
+            <span class="off">18% off</span>
+          </div>
+          <div class="cta-row">
+            <button class="btn primary" onclick="addToCart('Product 3', 3100)">Add to Cart</button>
+            <button class="btn outline" onclick="openAR('model_2.glb')">📷 View in AR</button>
+          </div>
         </div>
+      </article>
 
-        <!-- Product 4 -->
-        <div class="product-card">
-            <img src="https://yashasvidesh03-cmd.github.io/3-d-model-/61WkiYtfpIL.jpg" alt="Product 4">
-            <h2>Product 4</h2>
-            <p>Durable and stylish.</p>
-            <button onclick="openAR('model_3.glb')">📷 View in AR</button>
+      <!-- PRODUCT 4 (image 61WkiYtfpIL.jpg, uses model_3.glb) -->
+      <article class="card" data-title="Product 4">
+        <div class="badge green">New</div>
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/61WkiYtfpIL.jpg" alt="Product 4">
+        <div class="card-body">
+          <h2 class="card-title">Product 4</h2>
+          <div class="rating">⭐️⭐️⭐️⭐️⭐️ <span class="muted">(312)</span></div>
+          <ul class="feat">
+            <li>Premium finish</li>
+            <li>Heavy-duty design</li>
+            <li>Advanced safety</li>
+          </ul>
+          <div class="price-row">
+            <span class="price">₹5,400</span>
+            <span class="mrp muted">₹6,499</span>
+            <span class="off">17% off</span>
+          </div>
+          <div class="cta-row">
+            <button class="btn primary" onclick="addToCart('Product 4', 5400)">Add to Cart</button>
+            <button class="btn outline" onclick="openAR('model_3.glb')">📷 View in AR</button>
+          </div>
         </div>
+      </article>
 
-        <!-- Product 5 -->
-        <div class="product-card">
-            <img src="https://yashasvidesh03-cmd.github.io/3-d-model-/realistic-iron-isolated-on-white-background-vector-illustration.jpg" alt="Product 5">
-            <h2>Product 5</h2>
-            <p>Perfect blend of design and utility.</p>
-            <button onclick="openAR('model_4.glb')">📷 View in AR</button>
+      <!-- PRODUCT 5 (image realistic-iron..., uses model_4.glb) -->
+      <article class="card" data-title="Product 5">
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/realistic-iron-isolated-on-white-background-vector-illustration.jpg" alt="Product 5">
+        <div class="card-body">
+          <h2 class="card-title">Product 5</h2>
+          <div class="rating">⭐️⭐️⭐️⭐️☆ <span class="muted">(1,002)</span></div>
+          <ul class="feat">
+            <li>Pro-level performance</li>
+            <li>Sleek & modern look</li>
+            <li>Great for gifting</li>
+          </ul>
+          <div class="price-row">
+            <span class="price">₹6,500</span>
+            <span class="mrp muted">₹7,499</span>
+            <span class="off">13% off</span>
+          </div>
+          <div class="cta-row">
+            <button class="btn primary" onclick="addToCart('Product 5', 6500)">Add to Cart</button>
+            <button class="btn outline" onclick="openAR('model_4.glb')">📷 View in AR</button>
+          </div>
         </div>
+      </article>
 
-    </main>
+    </div>
+  </main>
 
-    <script src="script.js"></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2025 ARShop • Built with ❤️</div>
+      <div class="links">
+        <a href="#">Help</a>
+        <a href="#">Returns</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" class="toast">Added to cart</div>
+
+  <script src="script.js"></script>
 </body>
-</html>
+                </html>
+          
