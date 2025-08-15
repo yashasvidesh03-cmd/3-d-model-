@@ -3,82 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Electric Irons Shop</title>
-  <link rel="stylesheet" href="style.css">
+  <title>3D Models & Products</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    h1 { text-align: center; padding: 20px; }
+    .products, .models {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    .product-card h3 { margin: 10px 0 5px; }
+    model-viewer {
+      width: 100%;
+      height: 400px;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header / Navbar -->
-  <header>
-    <div class="container nav-flex">
-      <div class="logo">Electric Irons</div>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <h1>Our Latest Irons</h1>
-    <div class="products">
-      <!-- Product Card 1 with AR -->
-      <div class="product-card">
-        <img src="17010-01.jpg" alt="Iron Model 1">
-        <div class="product-info">
-          <h2>Iron Model 1</h2>
-          <p>Efficient, stylish and portable iron for daily use.</p>
-          <div class="price">₹1,299</div>
-          <button id="openCameraBtn">📷 View in AR</button>
-        </div>
-      </div>
-      <!-- Product Card 2 (no AR) -->
-      <div class="product-card">
-        <img src="drsrcmtmgbpz9x3opy0t_sbqpcswqss5gzj6k.jpg" alt="Iron Model 2">
-        <div class="product-info">
-          <h2>Iron Model 2</h2>
-          <p>Fast heating, safety features, perfect for modern homes.</p>
-          <div class="price">₹1,499</div>
-          <button disabled>📷 View in AR</button>
-        </div>
-      </div>
-      <!-- Product Card 3 (no AR) -->
-      <div class="product-card">
-        <img src="t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Iron Model 3">
-        <div class="product-info">
-          <h2>Iron Model 3</h2>
-          <p>Super smooth glide, lightweight with power saver mode.</p>
-          <div class="price">₹1,199</div>
-          <button disabled>📷 View in AR</button>
-        </div>
-      </div>
-    </div>
-    
-    <h2>3D View</h2>
-    <!-- Luma Labs Embed -->
-    <iframe src="https://lumalabs.ai/embed/714e87de-8401-4b22-a9fa-be61b300172d?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=top-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=true"></iframe>
-  </main>
-  
-  <!-- Footer -->
-  <footer>
-    <div class="container footer-flex">
-      <span>© 2025 Electric Irons Shop</span>
-      <div>
-        <a href="#">Facebook</a> |
-        <a href="#">Instagram</a>
-      </div>
-    </div>
-  </footer>
+<h1>Our Products</h1>
+<section class="products">
+  <div class="product-card">
+    <img src="https://raw.githubusercontent.com/yashasvidesh03-cmd/3-d-model-/main/61WkiYtfpIL.jpg" alt="Manchurian Dish">
+    <h3>Product 1: Manchurian Dish</h3>
+    <p>Delicious veg manchurian served hot with rich gravy. Perfect for foodies!</p>
+  </div>
+  <div class="product-card">
+    <img src="https://raw.githubusercontent.com/yashasvidesh03-cmd/3-d-model-/main/realistic-iron-isolated-on-white-background-vector-illustration.jpg" alt="Iron">
+    <h3>Product 2: Electric Iron</h3>
+    <p>High-quality iron for smooth and wrinkle-free clothes.</p>
+  </div>
+</section>
 
-  <!-- AR JavaScript -->
-  <script>
-    document.getElementById('openCameraBtn').addEventListener('click', () => {
-      const modelUrl = "https://yashasvidesh03-cmd.github.io/3-d-model-/textured_mesh_glb-1.glb";
-      const sceneViewerUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(modelUrl)}&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;`;
-      window.location.href = sceneViewerUrl;
-    });
-  </script>
+<h1>3D Models</h1>
+<section class="models">
+  <model-viewer src="https://raw.githubusercontent.com/yashasvidesh03-cmd/3-d-model-/main/model_1.glb"
+                alt="3D Model 1" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+
+  <model-viewer src="https://raw.githubusercontent.com/yashasvidesh03-cmd/3-d-model-/main/model_2.glb"
+                alt="3D Model 2" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+
+  <model-viewer src="https://raw.githubusercontent.com/yashasvidesh03-cmd/3-d-model-/main/model_3.glb"
+                alt="3D Model 3" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+
+  <model-viewer src="https://raw.githubusercontent.com/yashasvidesh03-cmd/3-d-model-/main/model_4.glb"
+                alt="3D Model 4" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+</section>
+
 </body>
-  </html>
-          
+</html>
