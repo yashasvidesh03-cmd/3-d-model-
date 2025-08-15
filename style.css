@@ -25,7 +25,7 @@ body{
 }
 .container{max-width:1200px; margin:0 auto; padding:0 16px}
 .nav{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:12px 0}
-.logo{font-size:1.6rem; font-weight:800; letter-spacing:.2px}
+.logo{font-size:1.6rem; font-weight:800; letter-spacing:.2px; text-decoration:none; color:inherit}
 .logo .accent{color:var(--brand)}
 .search{display:flex; align-items:center; gap:8px; flex:1; max-width:680px}
 .search input{
@@ -84,10 +84,36 @@ body{
 .mrp{text-decoration:line-through}
 .off{ color:var(--danger); font-weight:700; font-size:.9rem }
 
-.cta-row{ display:flex; gap:10px; margin-top:6px }
+.cta-row{ display:flex; gap:10px; margin-top:6px; flex-wrap:wrap }
 .btn{
   padding:10px 12px; border-radius:10px; cursor:pointer; border:1px solid #e5e7eb; background:#fff;
 }
 .btn.primary{ background:var(--brand); color:#fff; border-color:transparent }
 .btn.primary:hover{ background:var(--brand-dark) }
-      
+.btn.outline:hover{ background:#f0f4ff }
+
+.link{
+  padding:0; margin-top:6px; background:transparent; border:none; color:var(--brand); cursor:pointer; text-align:left;
+}
+
+/* Reviews (collapsed by default) */
+.reviews{ display:none; margin-top:8px; padding:10px; border-radius:10px; background:#f9fafb; border:1px solid #eef2f7; color:#374151 }
+.reviews p{ margin:0 0 6px }
+
+/* Footer */
+.footer{ background:#fff; border-top:1px solid #eef2f7 }
+.footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:16px 0 }
+
+/* Toast */
+.toast{
+  position:fixed; left:50%; bottom:24px; transform:translateX(-50%);
+  background:#111827; color:#fff; padding:10px 14px; border-radius:999px; box-shadow:var(--shadow);
+  opacity:0; pointer-events:none; transition:opacity .2s ease;
+}
+.toast.show{ opacity:1 }
+
+/* Responsive */
+@media (max-width: 900px){
+  .promo-inner{ flex-direction:column; text-align:center }
+  .promo-inner img{ max-width:80% }
+}
