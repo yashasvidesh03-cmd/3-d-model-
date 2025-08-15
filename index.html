@@ -12,11 +12,11 @@
   <header class="header">
     <div class="container nav">
       <div class="brand">
-        <span class="logo">AR<span class="accent">Shop</span></span>
+        <a class="logo" href="#">AR<span class="accent">Shop</span></a>
       </div>
 
       <div class="search">
-        <input id="searchInput" type="text" placeholder="Search for irons, kitchen, gadgets…" />
+        <input id="searchInput" type="text" placeholder="Search products…" />
         <button id="searchBtn" aria-label="Search">Search</button>
       </div>
 
@@ -33,7 +33,7 @@
   <section class="promo">
     <div class="container promo-inner">
       <div>
-        <h1>Experience Products in Your Space</h1>
+        <h1>See it in your space</h1>
         <p>Tap <b>📷 View in AR</b> on mobile to open Google Scene Viewer and place the product in your room.</p>
       </div>
       <img src="https://yashasvidesh03-cmd.github.io/3-d-model-/hero.png" alt="AR hero" />
@@ -44,13 +44,13 @@
   <main class="container">
     <div class="grid" id="productsGrid">
 
-      <!-- PRODUCT 1 (uses textured_mesh_glb-1.glb) -->
+      <!-- PRODUCT 1 -->
       <article class="card" data-title="Product 1">
         <div class="badge">Bestseller</div>
-        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/product1.jpg" alt="Product 1">
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/17010-01.jpg" alt="Product 1">
         <div class="card-body">
           <h2 class="card-title">Product 1</h2>
-          <div class="rating">⭐️⭐️⭐️⭐️☆ <span class="muted">(1,248)</span></div>
+          <div class="rating" aria-label="4.4 stars">⭐️⭐️⭐️⭐️☆ <span class="muted">(1,248)</span></div>
           <ul class="feat">
             <li>Premium build quality</li>
             <li>Great for daily use</li>
@@ -65,15 +65,21 @@
             <button class="btn primary" onclick="addToCart('Product 1', 2600)">Add to Cart</button>
             <button class="btn outline" onclick="openAR('textured_mesh_glb-1.glb')">📷 View in AR</button>
           </div>
+          <button class="link" data-reviews="#r1">Read reviews</button>
+          <div id="r1" class="reviews">
+            <p>🤖 <b>PixelPete</b> — “Looks exactly like in AR. Smooth finish.”</p>
+            <p>🤖 <b>BotAva</b> — “Heats fast, lightweight. 5/5 would buy again.”</p>
+            <p>🤖 <b>RoboRaj</b> — “Great value at this price.”</p>
+          </div>
         </div>
       </article>
 
-      <!-- PRODUCT 2 (uses model_1.glb) -->
+      <!-- PRODUCT 2 -->
       <article class="card" data-title="Product 2">
-        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/product2.jpg" alt="Product 2">
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/drsrcmtmgbpz9x3opy0t_sbqpcswqss5gzj6k.jpg" alt="Product 2">
         <div class="card-body">
           <h2 class="card-title">Product 2</h2>
-          <div class="rating">⭐️⭐️⭐️⭐️⭐️ <span class="muted">(894)</span></div>
+          <div class="rating" aria-label="4.7 stars">⭐️⭐️⭐️⭐️⭐️ <span class="muted">(894)</span></div>
           <ul class="feat">
             <li>Modern design</li>
             <li>Energy efficient</li>
@@ -88,15 +94,20 @@
             <button class="btn primary" onclick="addToCart('Product 2', 3200)">Add to Cart</button>
             <button class="btn outline" onclick="openAR('model_1.glb')">📷 View in AR</button>
           </div>
+          <button class="link" data-reviews="#r2">Read reviews</button>
+          <div id="r2" class="reviews">
+            <p>🤖 <b>ByteBina</b> — “AR preview helped me pick the color.”</p>
+            <p>🤖 <b>CircuitSid</b> — “Feels premium. Worth it.”</p>
+          </div>
         </div>
       </article>
 
-      <!-- PRODUCT 3 (uses model_2.glb) -->
+      <!-- PRODUCT 3 -->
       <article class="card" data-title="Product 3">
-        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/product3.jpg" alt="Product 3">
+        <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Product 3">
         <div class="card-body">
           <h2 class="card-title">Product 3</h2>
-          <div class="rating">⭐️⭐️⭐️⭐️☆ <span class="muted">(632)</span></div>
+          <div class="rating" aria-label="4.3 stars">⭐️⭐️⭐️⭐️☆ <span class="muted">(632)</span></div>
           <ul class="feat">
             <li>Reliable build</li>
             <li>Great price–performance</li>
@@ -111,16 +122,21 @@
             <button class="btn primary" onclick="addToCart('Product 3', 3100)">Add to Cart</button>
             <button class="btn outline" onclick="openAR('model_2.glb')">📷 View in AR</button>
           </div>
+          <button class="link" data-reviews="#r3">Read reviews</button>
+          <div id="r3" class="reviews">
+            <p>🤖 <b>NexaNova</b> — “Solid everyday performer.”</p>
+            <p>🤖 <b>AlgoAnya</b> — “Matches AR size perfectly on my desk.”</p>
+          </div>
         </div>
       </article>
 
-      <!-- PRODUCT 4 (image 61WkiYtfpIL.jpg, uses model_3.glb) -->
+      <!-- PRODUCT 4 -->
       <article class="card" data-title="Product 4">
         <div class="badge green">New</div>
         <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/61WkiYtfpIL.jpg" alt="Product 4">
         <div class="card-body">
           <h2 class="card-title">Product 4</h2>
-          <div class="rating">⭐️⭐️⭐️⭐️⭐️ <span class="muted">(312)</span></div>
+          <div class="rating" aria-label="4.8 stars">⭐️⭐️⭐️⭐️⭐️ <span class="muted">(312)</span></div>
           <ul class="feat">
             <li>Premium finish</li>
             <li>Heavy-duty design</li>
@@ -135,15 +151,20 @@
             <button class="btn primary" onclick="addToCart('Product 4', 5400)">Add to Cart</button>
             <button class="btn outline" onclick="openAR('model_3.glb')">📷 View in AR</button>
           </div>
+          <button class="link" data-reviews="#r4">Read reviews</button>
+          <div id="r4" class="reviews">
+            <p>🤖 <b>VectorVik</b> — “AR made setup super easy.”</p>
+            <p>🤖 <b>GammaGia</b> — “Looks gorgeous, feels solid.”</p>
+          </div>
         </div>
       </article>
 
-      <!-- PRODUCT 5 (image realistic-iron..., uses model_4.glb) -->
+      <!-- PRODUCT 5 -->
       <article class="card" data-title="Product 5">
         <img class="card-img" src="https://yashasvidesh03-cmd.github.io/3-d-model-/realistic-iron-isolated-on-white-background-vector-illustration.jpg" alt="Product 5">
         <div class="card-body">
           <h2 class="card-title">Product 5</h2>
-          <div class="rating">⭐️⭐️⭐️⭐️☆ <span class="muted">(1,002)</span></div>
+          <div class="rating" aria-label="4.5 stars">⭐️⭐️⭐️⭐️☆ <span class="muted">(1,002)</span></div>
           <ul class="feat">
             <li>Pro-level performance</li>
             <li>Sleek & modern look</li>
@@ -157,6 +178,11 @@
           <div class="cta-row">
             <button class="btn primary" onclick="addToCart('Product 5', 6500)">Add to Cart</button>
             <button class="btn outline" onclick="openAR('model_4.glb')">📷 View in AR</button>
+          </div>
+          <button class="link" data-reviews="#r5">Read reviews</button>
+          <div id="r5" class="reviews">
+            <p>🤖 <b>QuantumQue</b> — “AR size-check saved me a return.”</p>
+            <p>🤖 <b>BotMohan</b> — “Premium feel, fast heat-up.”</p>
           </div>
         </div>
       </article>
@@ -181,5 +207,5 @@
 
   <script src="script.js"></script>
 </body>
-                </html>
+        </html>
           
