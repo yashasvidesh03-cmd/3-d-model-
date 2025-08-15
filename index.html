@@ -23,7 +23,7 @@
   <main>
     <h1>Our Latest Irons</h1>
     <div class="products">
-      <!-- Product Card 1 -->
+      <!-- Product Card 1 with AR -->
       <div class="product-card">
         <img src="17010-01.jpg" alt="Iron Model 1">
         <div class="product-info">
@@ -33,7 +33,7 @@
           <button id="openCameraBtn">📷 View in AR</button>
         </div>
       </div>
-      <!-- Product Card 2 -->
+      <!-- Product Card 2 (no AR) -->
       <div class="product-card">
         <img src="drsrcmtmgbpz9x3opy0t_sbqpcswqss5gzj6k.jpg" alt="Iron Model 2">
         <div class="product-info">
@@ -43,7 +43,7 @@
           <button disabled>📷 View in AR</button>
         </div>
       </div>
-      <!-- Product Card 3 -->
+      <!-- Product Card 3 (no AR) -->
       <div class="product-card">
         <img src="t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Iron Model 3">
         <div class="product-info">
@@ -71,8 +71,14 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- AR JavaScript -->
+  <script>
+    document.getElementById('openCameraBtn').addEventListener('click', () => {
+      const modelUrl = "https://yashasvidesh03-cmd.github.io/3-d-model-/textured_mesh_glb-1.glb";
+      const sceneViewerUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(modelUrl)}&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;`;
+      window.location.href = sceneViewerUrl;
+    });
+  </script>
 </body>
   </html>
-  
-    
+          
