@@ -3,82 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Luma Labs + Image Gallery + AR Model</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      margin: 0;
-      background: #f8f8f8;
-    }
-    h1, h2 {
-      margin: 10px 0;
-    }
-    .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin: 10px;
-      flex-wrap: wrap;
-    }
-    .gallery img {
-      width: 150px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
-      max-width: 100%;
-    }
-    iframe {
-      width: 100%;
-      height: 60vh;
-      border: none;
-      border-radius: 10px;
-      margin-top: 10px;
-      max-width: 100%;
-    }
-    button {
-      margin-top: 15px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background: black;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #333;
-    }
-  </style>
+  <title>Electric Irons Shop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header / Navbar -->
+  <header>
+    <div class="container nav-flex">
+      <div class="logo">Electric Irons</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-  <h1>Electric Irons Showcase</h1>
-
-  <!-- Image Gallery -->
-  <div class="gallery">
-    <img src="17010-01.jpg" alt="Iron Model 1">
-    <img src="drsrcmtmgbpz9x3opy0t_sbqpcswqss5gzj6k.jpg" alt="Iron Model 2">
-    <img src="t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Iron Model 3">
-  </div>
-
-  <h2>3D View</h2>
-
-  <!-- Luma Labs Embed -->
-  <iframe src="https://lumalabs.ai/embed/714e87de-8401-4b22-a9fa-be61b300172d?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=top-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=true"></iframe>
-
-  <!-- Open Camera Button -->
-  <button id="openCameraBtn">📷 View in AR</button>
-
-  <script>
-    document.getElementById('openCameraBtn').addEventListener('click', () => {
-  const modelUrl = "https://yashasvidesh03-cmd.github.io/3-d-model-/textured_mesh_glb-1.glb";
-  const sceneViewerUrl = `intent://arvr.google.com/scene-viewer/1.0?file=${encodeURIComponent(modelUrl)}&mode=ar_only#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;end;`;
-  window.location.href = sceneViewerUrl;
-});
+  <main>
+    <h1>Our Latest Irons</h1>
+    <div class="products">
+      <!-- Product Card 1 -->
+      <div class="product-card">
+        <img src="17010-01.jpg" alt="Iron Model 1">
+        <div class="product-info">
+          <h2>Iron Model 1</h2>
+          <p>Efficient, stylish and portable iron for daily use.</p>
+          <div class="price">₹1,299</div>
+          <button id="openCameraBtn">📷 View in AR</button>
+        </div>
+      </div>
+      <!-- Product Card 2 -->
+      <div class="product-card">
+        <img src="drsrcmtmgbpz9x3opy0t_sbqpcswqss5gzj6k.jpg" alt="Iron Model 2">
+        <div class="product-info">
+          <h2>Iron Model 2</h2>
+          <p>Fast heating, safety features, perfect for modern homes.</p>
+          <div class="price">₹1,499</div>
+          <button disabled>📷 View in AR</button>
+        </div>
+      </div>
+      <!-- Product Card 3 -->
+      <div class="product-card">
+        <img src="t9kyptn6cc9jkclkmv5d_0haqugpnmy8ehacf.jpg" alt="Iron Model 3">
+        <div class="product-info">
+          <h2>Iron Model 3</h2>
+          <p>Super smooth glide, lightweight with power saver mode.</p>
+          <div class="price">₹1,199</div>
+          <button disabled>📷 View in AR</button>
+        </div>
+      </div>
+    </div>
     
-  </script>
+    <h2>3D View</h2>
+    <!-- Luma Labs Embed -->
+    <iframe src="https://lumalabs.ai/embed/714e87de-8401-4b22-a9fa-be61b300172d?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=top-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=true"></iframe>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-flex">
+      <span>© 2025 Electric Irons Shop</span>
+      <div>
+        <a href="#">Facebook</a> |
+        <a href="#">Instagram</a>
+      </div>
+    </div>
+  </footer>
 
+  <script src="script.js"></script>
 </body>
-    </html>
+  </html>
+  
     
